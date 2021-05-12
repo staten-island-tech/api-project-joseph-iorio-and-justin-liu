@@ -1,7 +1,6 @@
 {
   "name": "parcel-template",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "clean": "rm dist/bundle.js",
@@ -17,5 +16,14 @@
   },
   "browserslist": [
     "since 2017-06"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staten-island-tech/api-project-joseph-iorio-and-justin-liu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/staten-island-tech/api-project-joseph-iorio-and-justin-liu/issues"
+  },
+  "homepage": "https://github.com/staten-island-tech/api-project-joseph-iorio-and-justin-liu#readme",
+  "description": ""
 }
