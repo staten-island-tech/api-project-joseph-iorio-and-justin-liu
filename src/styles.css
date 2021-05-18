@@ -16,7 +16,7 @@ body {
   margin: 3rem auto;
   text-align: center;
 }
-.top-rated {
+.header-text {
   margin: 1rem auto 2rem auto;
   text-align: center;
   font-size: 3.8rem;
@@ -115,4 +115,13 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+.topartists {
+  padding: 5px;
+  width: 15rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  color: white;
 }
