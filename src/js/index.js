@@ -1,21 +1,18 @@
 import { DOMSelectors } from "./DOM";
 import { genres } from "./genre";
+var Lastfm = require("simple-lastfm");
 var lastfm = new LastFM({
   apiKey: "f21088bf9097b49ad4e7f487abab981e",
   apiSecret: "7ccaec2093e33cded282ec7bc81c6fca",
   cache: cache,
 });
+lastfm.substring(1);
 
-/* Load some artist info. */
 lastfm.artist.getInfo(
-  { artist: "The xx" },
+  { artist: "The Smiths" },
   {
-    success: function (data) {
-      /* Use data. */
-    },
-    error: function (code, message) {
-      /* Show error message. */
-    },
+    success: function (data) {},
+    error: function (code, message) {},
   }
 );
 function httpGetAsync(theUrl, callback) {
@@ -37,6 +34,18 @@ lastfm.tag.getWeeklyArtistChart(
       );
 
       topArtistName = data.weeklyartistchart.artist[0].name;
+      window.document.onload = lastfm.user.getTopArtists(
+        {
+          user: "dior-_-",
+          limit: 10,
+        },
+        {
+          success: function (data) {},
+          error: function (data) {
+            alert(data.error + " " + data.message);
+          },
+        }
+      );
 
       lastfm.artist.getInfo(
         { artist: topArtistName },
