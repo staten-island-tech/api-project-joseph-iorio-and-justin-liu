@@ -27,6 +27,7 @@
   "homepage": "https://github.com/staten-island-tech/api-project-joseph-iorio-and-justin-liu#readme",
   "description": "",
   "dependencies": {
+    "caniuse-lite": "^1.0.30001228",
     "last-fm": "^5.3.0",
     "scrobbles": "^0.1.0",
     "simple-lastfm": "^1.0.6"

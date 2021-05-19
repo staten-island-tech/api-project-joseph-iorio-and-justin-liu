@@ -1,5 +1,5 @@
 import { DOMSelectors } from "./DOM";
-import { LastFM } from "js/lastfm.api.md5";
+import { Lastfm } from "js/lastfm.api.md5";
 
 var Lastfm = (
   apiKey: "f21088bf9097b49ad4e7f487abab981e",
@@ -8,7 +8,6 @@ var Lastfm = (
   password: "Kanyeeast1",
   cache: cache,
 );
-var cache = new LastFMCache();
 var Lastfm = require("simple-lastfm");
 async function getAllPages () {
   const reader = new RecentTracks({
@@ -16,9 +15,7 @@ async function getAllPages () {
     user: 'dior-_-'
   })
 
-
 lastfm.substring(1);
-
 lastfm.artist.getInfo(
   { artist: "The Smiths" },
   {
