@@ -1,13 +1,22 @@
 import { DOMSelectors } from "./DOM";
-import { genres } from "./genre";
-var Lastfm = require("simple-lastfm");
-var lastfm = new LastFM({
+import { LastFM } from "js/lastfm.api.md5";
+
+var Lastfm = (
   apiKey: "f21088bf9097b49ad4e7f487abab981e",
   apiSecret: "7ccaec2093e33cded282ec7bc81c6fca",
   username: "dior-_-",
   password: "Kanyeeast1",
   cache: cache,
-});
+);
+var cache = new LastFMCache();
+var Lastfm = require("simple-lastfm");
+async function getAllPages () {
+  const reader = new RecentTracks({
+    apikey: f21088bf9097b49ad4e7f487abab981e,
+    user: 'dior-_-'
+  })
+
+
 lastfm.substring(1);
 
 lastfm.artist.getInfo(
