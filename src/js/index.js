@@ -1,13 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import { genres } from "./genre";
-var Lastfm = require("simple-lastfm");
-var lastfm = new LastFM({
-  apiKey: "f21088bf9097b49ad4e7f487abab981e",
-  apiSecret: "7ccaec2093e33cded282ec7bc81c6fca",
-  username: "dior-_-",
-  password: "Kanyeeast1",
-  cache: cache,
-});
+import { lastfm } from "./lastfm.api.js";
+
 lastfm.substring(1);
 
 lastfm.artist.getInfo(
