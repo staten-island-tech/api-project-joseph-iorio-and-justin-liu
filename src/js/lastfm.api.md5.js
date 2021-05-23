@@ -220,19 +220,6 @@ function binl2str(bin) {
   return str;
 }
 
-/*
- * Convert an array of little-endian words to a hex string.
- */
-function binl2hex(binarray) {
-  var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
-  var str = "";
-  for (var i = 0; i < binarray.length * 4; i++) {
-    str +=
-      hex_tab.charAt((binarray[i >> 2] >> ((i % 4) * 8 + 4)) & 0xf) +
-      hex_tab.charAt((binarray[i >> 2] >> ((i % 4) * 8)) & 0xf);
-  }
-  return str;
-}
 
 /*
  * Convert an array of little-endian words to a base-64 string
@@ -249,6 +236,20 @@ function binl2b64(binarray) {
       if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;
       else str += tab.charAt((triplet >> (6 * (3 - j))) & 0x3f);
     }
+  }
+  return str;
+}
+
+/*
+ * Convert an array of little-endian words to a hex string.
+ */
+function binl2hex(binarray) {
+  var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+  var str = "";
+  for (var i = 0; i < binarray.length * 4; i++) {
+    str +=
+      hex_tab.charAt((binarray[i >> 2] >> ((i % 4) * 8 + 4)) & 0xf) +
+      hex_tab.charAt((binarray[i >> 2] >> ((i % 4) * 8)) & 0xf);
   }
   return str;
 }
