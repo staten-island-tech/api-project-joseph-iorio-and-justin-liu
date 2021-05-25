@@ -8,8 +8,6 @@ const getChart = async () => {
   lastfm.tag.getWeeklyArtistChart({ tag: "trance", limit: 6 });
 };
 
-export { getChart };
-
 function httpGetAsync(theUrl, callback) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function () {
