@@ -220,7 +220,6 @@ function binl2str(bin) {
   return str;
 }
 
-
 /*
  * Convert an array of little-endian words to a base-64 string
  */
