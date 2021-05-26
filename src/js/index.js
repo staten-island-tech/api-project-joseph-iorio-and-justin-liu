@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 const fetch = require("node-fetch");
 
 function httpGetAsync(theUrl, callback) {
-  var xmlHttp = new XMLHttpRequest();
+  xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function () {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
       callback(xmlHttp.responseText);
@@ -52,20 +52,20 @@ function ArtistTop() {
       }
     );
 
-    var topArtistName = "";
+    topArtistName = "";
     $(window).on(function () {
       // define api keys
-      var apiKey = "f21088bf9097b49ad4e7f487abab981e";
-      var apiSecret = "7ccaec2093e33cded282ec7bc81c6fca";
+      apiKey = "f21088bf9097b49ad4e7f487abab981e";
+      apiSecret = "7ccaec2093e33cded282ec7bc81c6fca";
       // create a Cache object
-      var cache = new LastFMCache();
+      cache = new LastFMCache();
       // create a LastFM object
-      var lastfm = new LastFM({
+      lastfm = new LastFM({
         apiKey: apiKey,
         apiSecret: apiSecret,
         cache: cache,
       });
-      var topArtistName = "";
+      topArtistName = "";
       // get weekly artist chart by tag 'trance'
 
       lastfm.tag.getWeeklyArtistChart(
