@@ -8,7 +8,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script type="text/javascript" src="js/index.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="js/lastfm.api.js"></script>
   </head>
@@ -20,66 +19,80 @@
     <div class="image1">
       <img src="images/lastfm.png" alt="LastFM Logo" />
     </div>
+    <script type="text/javascript" src="js/index.js"></script>
     <script>
-      function ArtistTop() {
-        const getChart = () => {
-          const response = axios.get("./lastfm.api.js");
-
-          lastfm.tag.getWeeklyArtistChart(
-            { tag: "electronic", limit: 6 },
-            {
-              success: function (data) {
-                // render top weekly artist using 'lastfmTemplateArtists' template
-
-                top_artists.html(
-                  lastfmTemplateArtists.render(data.weeklyartistchart.artist)
-                );
-                // define top artist name
-
-                topArtistName = data.weeklyartistchart.artist[0].name;
-
-                // load details of the artist
-
-                lastfm.artist.getInfo(
-                  { artist: topArtistName },
-                  {
-                    success: function (data) {
-                      // render the single artist info using 'lastfmTemplateArtistInfo' template
-
-                      top_artist.html;
-                      lastfmTemplateArtistInfo.render(data.artist);
-
-                      lastfm.artist.getTopTracks(
-                        { artist: topArtistName, limit: 9 },
-                        {
-                          success: function (data) {
-                            top_tracks.html(
-                              lastfmTemplateTracks.render(data.toptracks.track)
-                            );
-                          },
-                        }
-                      );
-                    },
-                  }
-                );
-              },
-            }
+      {
+        function StartApplication() {
+          var Turl =
+            "https://ws.audioscrobbler.com/2.0/?api_key=5908c0487c4b5f26281c158dd83b59d6&format=json&method=user.getTopArtists&user=dior-_-&period=overall&limit=200";
+          var request = new XMLHttpRequest();
+          request.open(
+            "GET",
+            "https://ws.audioscrobbler.com/2.0/?api_key=5908c0487c4b5f26281c158dd83b59d6&format=json&method=user.getTopArtists&user=dior-_-&period=overall&limit=200",
+            true
           );
-        };
-        document.getElementById("btn").addEventListener("click", getChart);
+
+          request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+              // Success!
+              var data = JSON.parse(this.response);
+            } else {
+            }
+          };
+
+          request.onerror = function () {
+            // There was a connection error of some sort
+          };
+
+          request.send();
+          var elements = document.querySelectorAll(data.topartists.artist);
+          Array.prototype.forEach.call(data.topartists.artist),
+            function (i, item) {
+              currArtist =
+                "<div class='artist p" +
+                (i + 1) +
+                "'> \
+                      <div class='pos'>" +
+                (i + 1) +
+                "</div> \
+                      <div class='nm'>" +
+                data.topartists.artist[i].name +
+                "</div> \
+                      <div class='pc'>" +
+                data.topartists.artist[i].playcount +
+                "</div> \
+                      </div>";
+              "#output".append(currArtist);
+            };
+        }
       }
+
+      var url =
+        "https://ws.audioscrobbler.com/2.0/?api_key=5908c0487c4b5f26281c158dd83b59d6&format=json&method=user.getTopArtists&user=dior-_-&period=overall&limit=200";
+      url,
+        function (data) {
+          var elements = document.querySelectorAll(data.topartists.artist);
+          Array.prototype.forEach.call(elements, function (i, el) {});
+          currArtist =
+            "<div class='artist p" +
+            (i + 1) +
+            "'> \
+                      <div class='pos'>" +
+            (i + 1) +
+            "</div> \
+                      <div class='nm'>" +
+            data.topartists.artist[i].name +
+            "</div> \
+                      <div class='pc'>" +
+            data.topartists.artist[i].playcount +
+            "</div> \
+                      </div>";
+        };
+      let btn = document.createElement("button");
+      btn.innerHTML = "Save";
+      btn.addEventListener("click", function StartApplication() {});
+      document.body.appendChild(btn);
     </script>
-    <div id="btn">
-      <input
-        id="clickMe"
-        type="submit"
-        form="form1"
-        value="Submit"
-        value="clickme"
-        onclick="ArtistTop();"
-      />
-    </div>
-    <script type="text/javascript" src="js/lastfm.api.md5.js"></script>
-    <script type="text/javascript" src="js/lastfm.api.js"></script>
+    <button type="submit" name="formBtn">Submit</button>
   </body>
 </html>
