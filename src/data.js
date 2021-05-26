@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 const fetch = require("node-fetch");
 const getChart = async () => {
-  const response = await axios.get("./lastfm.api.js");
+  const response = axios.get("./lastfm.api.js");
   setBooks(response.data);
 };
 export { getChart };

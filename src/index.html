@@ -8,26 +8,79 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-   
-  </body>
+    <script type="text/javascript" src="js/index.js"></script>
   </head>
 
+  <body>
     <h1 class="header">LastFM Chart Bot</h1>
     <h2 class="Header-text">What is trending?</h2>
+    \
     <div class="image1">
       <img src="images/lastfm.png" alt="LastFM Logo" />
     </div>
-    <div id="topchart">
-      <ol></ol>
+    <script>
+      function ArtistTop() {
+        document.getElementById("button").innerHTML;
+        const getChart = () => {
+          const response = axios.get("./lastfm.api.js");
+
+          lastfm.tag.getWeeklyArtistChart(
+            { tag: "pop", limit: 6 },
+            {
+              success: function (data) {
+                // render top weekly artist using 'lastfmTemplateArtists' template
+
+                $("#top_artists").html(
+                  $("#lastfmTemplateArtists").render(
+                    data.weeklyartistchart.artist
+                  )
+                );
+                // define top artist name
+
+                topArtistName = data.weeklyartistchart.artist[0].name;
+
+                // load details of the artist
+
+                lastfm.artist.getInfo(
+                  { artist: topArtistName },
+                  {
+                    success: function (data) {
+                      // render the single artist info using 'lastfmTemplateArtistInfo' template
+
+                      $("#top_artist").html(
+                        $("#lastfmTemplateArtistInfo").render(data.artist)
+                      );
+
+                      lastfm.artist.getTopTracks(
+                        { artist: topArtistName, limit: 9 },
+                        {
+                          success: function (data) {
+                            $("#top_tracks").html(
+                              $("#lastfmTemplateTracks").render(
+                                data.toptracks.track
+                              )
+                            );
+                          },
+                        }
+                      );
+                    },
+                  }
+                );
+              },
+            }
+          );
+        };
+      }
+    </script>
+    <div id="button">
+      <input
+        id="clickMe"
+        type="button"
+        value="clickme"
+        onclick="ArtistTop();"
+      />
     </div>
-    <div>
-      
-      <div>
-        <button onclick="getChart"()>
-          Get Chart
-        </button>
-        <br />
-      </div>
-      <script src="/js/index.js"></script>
-    </body>
-      </html>
+    <script type="text/javascript" src="js/lastfm.api.md5.js"></script>
+    <script type="text/javascript" src="js/lastfm.api.js"></script>
+  </body>
+</html>
