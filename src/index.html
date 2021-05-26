@@ -2,97 +2,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LastFM API Project</title>
+    <title>LASTFM !!!</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&family=Josefin+Slab:ital,wght@0,300;0,400;1,300&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="js/lastfm.api.js"></script>
   </head>
-
   <body>
-    <h1 class="header">LastFM Chart Bot</h1>
-    <h2 class="Header-text">What is trending?</h2>
-    \
-    <div class="image1">
-      <img src="images/lastfm.png" alt="LastFM Logo" />
+    <div class="big">
+      <h1>Last.fm Fetching</h1>
+      <input type="text" name="username" id="username" placeholder="Enter LastFM Name"> </br>
+      <button class="btn btn-lg" id="recBtn">Recent Listens</button>
+      <button class="btn btn-lg" id="artBtn">Top Artists</button>
     </div>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script>
-      {
-        function StartApplication() {
-          var Turl =
-            "https://ws.audioscrobbler.com/2.0/?api_key=5908c0487c4b5f26281c158dd83b59d6&format=json&method=user.getTopArtists&user=dior-_-&period=overall&limit=200";
-          var request = new XMLHttpRequest();
-          request.open(
-            "GET",
-            "https://ws.audioscrobbler.com/2.0/?api_key=5908c0487c4b5f26281c158dd83b59d6&format=json&method=user.getTopArtists&user=dior-_-&period=overall&limit=200",
-            true
-          );
-
-          request.onload = function () {
-            if (this.status >= 200 && this.status < 400) {
-              // Success!
-              var data = JSON.parse(this.response);
-            } else {
-            }
-          };
-
-          request.onerror = function () {
-            // There was a connection error of some sort
-          };
-
-          request.send();
-          var elements = document.querySelectorAll(data.topartists.artist);
-          Array.prototype.forEach.call(data.topartists.artist),
-            function (i, item) {
-              currArtist =
-                "<div class='artist p" +
-                (i + 1) +
-                "'> \
-                      <div class='pos'>" +
-                (i + 1) +
-                "</div> \
-                      <div class='nm'>" +
-                data.topartists.artist[i].name +
-                "</div> \
-                      <div class='pc'>" +
-                data.topartists.artist[i].playcount +
-                "</div> \
-                      </div>";
-              "#output".append(currArtist);
-            };
-        }
-      }
-
-      var url =
-        "https://ws.audioscrobbler.com/2.0/?api_key=5908c0487c4b5f26281c158dd83b59d6&format=json&method=user.getTopArtists&user=dior-_-&period=overall&limit=200";
-      url,
-        function (data) {
-          var elements = document.querySelectorAll(data.topartists.artist);
-          Array.prototype.forEach.call(elements, function (i, el) {});
-          currArtist =
-            "<div class='artist p" +
-            (i + 1) +
-            "'> \
-                      <div class='pos'>" +
-            (i + 1) +
-            "</div> \
-                      <div class='nm'>" +
-            data.topartists.artist[i].name +
-            "</div> \
-                      <div class='pc'>" +
-            data.topartists.artist[i].playcount +
-            "</div> \
-                      </div>";
-        };
-      let btn = document.createElement("button");
-      btn.innerHTML = "Save";
-      btn.addEventListener("click", function StartApplication() {});
-      document.body.appendChild(btn);
-    </script>
-    <button type="submit" name="formBtn">Submit</button>
+      
+      <div class="container data-window" style="display:none;">
+        <h2>Most recent</h2>
+        <div class="col-md-12">
+                <table class="table" id="recentTable">
+                    <tr class="table-header">
+                        <th class="cell"></th>
+                        <th class="cell">Song</th>
+                        <th class="cell">Artist</th>
+                        <th class="cell">Album</th>
+                    </tr>
+                 </table>
+        </div>
+        <ul id="recentList">
+        </ul>
+      </div>
+      <div class="container artist-grid" style="display:none;">
+        <h2>Top Artists</h2>
+        <div class="gallery-height">
+          <div class="artist-img">
+            <div class="middle">
+              <div class="text"></div>
+            </div>
+          </div>
+          <div class="artist-img">
+            <div class="middle">
+              <div class="text"></div>
+            </div>
+          </div>
+          <div class="artist-img">
+            <div class="middle">
+              <div class="text"></div>
+            </div>
+          </div>
+          <div class="artist-img">
+            <div class="middle">
+              <div class="text"></div>
+            </div>
+          </div>
+          <div class="artist-img">
+            <div class="middle">
+              <div class="text"></div>
+            </div>
+          </div>
+          <div class="artist-img">
+            <div class="middle">
+              <div class="text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    
+    
   </body>
+  <script type="text/javascript" src="index.js"></script>
 </html>

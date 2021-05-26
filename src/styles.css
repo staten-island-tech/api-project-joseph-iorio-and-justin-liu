@@ -1,125 +1,130 @@
-html,
 body {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-size: 62.5%;
-  color: white;
-  font-family: "Josefin Slab", serif;
-  font-weight: 500;
+  background: #485563; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-body {
-  background-color: #111;
-}
-.header {
-  font-size: 5.2rem;
-  margin: 3rem auto;
+
+.big {
+  margin: 20px auto;
+  width: 50%;
+  background-color: #d9d9d9;
   text-align: center;
+  height: 300px;
+  width: 500px;
 }
-.header-text {
-  margin: 1rem auto 2rem auto;
+
+.big h1 {
+  color: #29323c;
+  font-size: 50px;
+  font-family: "Raleway", sans-serif;
+}
+
+.big input {
+  margin: 20px auto;
   text-align: center;
-  font-size: 3.8rem;
+  font-family: "Raleway", sans-serif;
 }
-.movie-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 90vw;
+
+.big button {
+  color: #29323c;
   background-color: white;
-  margin: 1rem auto;
-  padding: 3rem auto;
-  align-items: center;
+  font-family: "Raleway", sans-serif;
 }
-.movie-card {
-  height: 65vh;
-  width: 20vw;
-  margin: 0 auto;
-  position: relative;
-  margin: 2rem auto;
+
+.header {
+  margin: 20px auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px 10px 10px 10px;
 }
-.movie-card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-position: center;
-  z-index: 3;
-  transition: all 0.3s;
+
+.data-window {
+  padding-top: 30px;
+  width: 900px;
 }
-.poster {
-  width: 100%;
-  height: 100%;
+
+.table {
+  color: #d9d9d9;
+  font-family: "Raleway", sans-serif;
 }
-.movie-card-back {
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  background-color: rgba(33, 33, 33, 0.8);
-  width: 100%;
-  height: 100%;
-}
-.movie-card-header {
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  margin: 1rem auto;
+
+h2 {
   text-align: center;
+  color: #d9d9d9;
+  margin: 20px auto;
+  font-family: "Raleway", sans-serif;
 }
-.score-box,
-.release-box {
-  text-align: center;
-}
-.movie-genres {
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
+
+.gallery-height {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  flex-direcententtion: column;
   flex-wrap: wrap;
-  align-items: center;
+  max-height: 700px;
+  align-content: center;
 }
-.movie-genre {
-  list-style: none;
+
+h1 {
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Raleway", sans-serif;
 }
-.user-score {
-  font-size: 2rem;
-}
-.release-date {
-  font-size: 2rem;
-}
-.movie-card:hover .movie-card-front {
-  z-index: 1;
-}
-.movie-card:hover .movie-card-back {
-  z-index: 3;
+
+.artist-img {
+  width: 25%;
+  margin: 5px;
+  color: aliceblue;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 45px;
+  border-radius: 2px;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
 }
-.test {
-  color: black;
-  font-size: 3rem;
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
 }
-img {
-  padding: 5px;
-  width: 15rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+
+.artist-grid:hover .image {
+  opacity: 0.3;
 }
-.topartists {
-  padding: 5px;
-  width: 15rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+
+.artist-grid:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4caf50;
   color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.recentTable {
+  table#table1 {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+.tbody {
+  margin-left: auto;
+  margin-right: auto;
 }
