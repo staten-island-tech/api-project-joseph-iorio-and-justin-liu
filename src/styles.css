@@ -75,6 +75,7 @@ right: 120%;
   }
 } 
 .table {
+  color:black;
   display: flex;
   margin-left: auto;
 
@@ -100,6 +101,7 @@ h1 {
 }
 
 .recentTable {
+  color: black;
   width: 75%;
   display: flex;
   justify-content: center;
